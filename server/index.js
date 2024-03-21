@@ -1,6 +1,7 @@
+const debug = require('debug')('app:startup');
 const Joi = require('joi');
-const logger = require('./logger')
-const authenticator = require('./auth')
+const logger = require('./logger');
+const authenticator = require('./auth');
 const express = require('express');
 const log = require('./logger');
 const app = express();
@@ -9,6 +10,7 @@ app.use(express.json());
 
 app.use(logger);
 app.use(authenticator);
+
 
 const roadmaps = [
     { id: 1, name: "Roadmap 1" },
