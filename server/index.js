@@ -6,6 +6,9 @@ const express = require('express');
 const log = require('./logger');
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', './views'); // default
+
 app.use(express.json());
 
 app.use(logger);
@@ -19,7 +22,7 @@ const roadmaps = [
 ]
 
 app.get('/', (req, res) => {
-    res.send("Hellp World!!!");
+    res.render('index', {title: 'My Express App', message: 'Hello World'})
 })
 
 app.get('/api/roadmaps', (req, res) => {
