@@ -1,5 +1,3 @@
-const debug = require('debug')('app:startup');
-const Joi = require('joi');
 const logger = require('./middleware/logger');
 const home = require('./routes/home');
 const roadmaps = require('./routes/roadmaps');
